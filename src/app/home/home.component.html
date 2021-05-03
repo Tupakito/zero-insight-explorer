@@ -1,0 +1,19 @@
+<app-nav></app-nav>
+<section class="hero">
+  <h2>Blockchain explorer</h2>
+  <div class="explorer">
+      <input type="text" class="search-input" placeholder="Search by address, transaction# or block#">
+      <button class="search-btn">Search <i class="fa fa-arrow-right"></i></button>
+  </div>
+</section>
+<section class="main-stats">
+  <app-progress-stats *ngFor="let chart of statsCharts" [chartId]="chart.id" [title]="chart.title" [subTitle]="chart.subTitle" [percent]="chart.percent"></app-progress-stats>
+</section>
+<section id="blocks" class="transactions">
+    <app-latest-blocks></app-latest-blocks>
+</section>
+<section id="transactions" class="transactions">
+  <app-latest-transactions></app-latest-transactions>
+</section>
+
+<script src="https://cdn.rawgit.com/kimmobrunfeldt/progressbar.js/1.0.0/dist/progressbar.js"></script>

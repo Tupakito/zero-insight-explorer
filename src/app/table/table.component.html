@@ -1,0 +1,15 @@
+<div class="wrap-table100">
+    <div class="table">
+        <div class="row header">
+            <div class="cell" *ngFor="let column of columns">{{column}}</div>
+        </div>
+        <ng-container *ngFor="let row of rows">
+            <div class="row" (click)="click(row.cells)">
+                <div class="cell" *ngFor="let cell of row.cells" [class.link]="cell.type === 'link'" data-title="{{cell.id}}">{{cell.value}}</div>
+            </div>
+        </ng-container>
+    </div>
+    <div *ngIf="rows.length === 0">
+        <div class="cell-nodata">No data</div>
+    </div>
+</div>

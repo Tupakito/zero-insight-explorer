@@ -1,0 +1,18 @@
+<header>
+    <nav>
+        <ul>
+            <h2 class="logo"><a href="#"><img src="/assets/img/zero_logo_light.png" alt="Zero Logo"></a></h2>
+            <li><a href="#transactions">Transactions</a></li>
+            <li><a href="#blocks">Blocks</a></li>
+            <li><a href="#"><div class="block-tag">Height: {{height}} <span *ngIf="status === 'finished'">(Synced)</span></div></a></li>
+            <li>
+                <div class="search-nav-container">
+                    <form class="search-nav-form" action="">
+                        <input type="search" class="search-nav">
+                        <i class="fa fa-search"></i>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>

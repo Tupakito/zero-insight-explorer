@@ -1,0 +1,37 @@
+<app-nav></app-nav>
+<section class="block">
+  <h2>Transaction</h2>
+  <div fxLayout="row" fxLayoutGap="3%">
+    <div class="container" fxFlex="75%">
+        <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0%">
+          <div fxLayout="column">
+            <div class="row-detail">
+              <div class="label">Hash:</div>
+              <div class="value"><span #txhash>{{txHash}}</span><mat-icon id="txhash">content_copy</mat-icon></div>
+            </div>
+            <div class="row-detail">
+              <div class="label">Datetime:</div>
+              <div class="value"><span class="subdetail">{{txTime}}</span> ({{txDate}})</div>
+            </div>
+            <div class="row-detail">
+                <div class="label">Size:</div>
+                <div>{{txSize}} bytes</div>
+              </div>
+              <div class="row-detail">
+                <div class="label">Confirmations:</div>
+                <div>{{confirmationCount}}</div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="container" fxFlex="25%">
+
+      </div>
+  </div>
+  
+  <!--<div class="container">
+    <h3 *ngIf="transactionCount <= 1; else transactions">{{transactionCount}} Transaction</h3>
+    <ng-template #transactions><h3>{{transactionCount}} Transactions</h3></ng-template>
+    <app-table [columns]="txColumns" [rows]="txRows" (clickEvent)="onClick($event)"></app-table>
+  </div>-->
+</section>

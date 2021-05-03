@@ -3,7 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  apiUrl: 'https://zersapling3.zeromachine.io/insight-api-zero/',
+  coin: {
+    name: 'Zero',
+    ticker: 'ZER',
+    maxSupply: 17000000,
+    masternodeColateral: 10000,
+  },
 };
 
 /*

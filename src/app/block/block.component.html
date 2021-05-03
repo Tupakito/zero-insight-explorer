@@ -1,0 +1,41 @@
+<app-nav></app-nav>
+<section class="block">
+  <h2>Block #{{blockId}}</h2>
+  <div class="container">
+    <div fxLayout="row" fxLayout.lt-md="column" fxLayoutGap="5%" fxLayoutGap.lt-md="0%">
+      <div fxLayout="column" fxFlex.gt-lg="50%" fxFlex.lt-lg="100%">
+        <div class="row-detail">
+          <div class="label">Hash:</div>
+          <div class="value"><span #blockhash>{{blockHash}}</span><mat-icon id="blockhash">content_copy</mat-icon></div>
+        </div>
+        <div class="row-detail">
+          <div class="label">Datetime:</div>
+          <div class="value"><span class="subdetail">{{blockTime}}</span> ({{blockDate}})</div>
+        </div>
+        <div class="row-detail">
+          <div class="label">Transactions:</div>
+          <div>{{transactionCount}}</div>
+        </div>
+      </div>
+      <div fxLayout="column" fxFlex.gt-md="50%" fxFlex.lt-lg="100%">
+        <div class="row-detail">
+          <div class="label">Size:</div>
+          <div>{{blockSize}} bytes</div>
+        </div>
+        <div class="row-detail">
+          <div class="label">Confirmations:</div>
+          <div>{{confirmationCount}}</div>
+        </div>
+        <div class="row-detail">
+          <div class="label">Reward:</div>
+          <div>{{blockReward}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <h3 *ngIf="transactionCount <= 1; else transactions">{{transactionCount}} Transaction</h3>
+    <ng-template #transactions><h3>{{transactionCount}} Transactions</h3></ng-template>
+    <app-table [columns]="txColumns" [rows]="txRows" (clickEvent)="onClick($event)"></app-table>
+  </div>
+</section>
